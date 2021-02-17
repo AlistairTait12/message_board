@@ -10,12 +10,14 @@
   <h1>Welcome to message board!</h1>
   <div>
     <h2>Messages (most recent first):</h2>
+    <%= @username %>
+    <%= @content %>
   </div>
   <div>
     <h2>Your message here:</h2>
     <form action="/message" method="post">
       <label for="username">
-        Username
+      Username
         <input type="text" name="username">
       </label>
       <label for="content">
@@ -23,7 +25,7 @@
         <input type="text" name="content">
       </label>
     <input type="submit" value="Post Message">
-    </form>
+    </form> 
   </div>
 </body>
 </html>

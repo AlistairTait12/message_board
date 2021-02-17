@@ -7,7 +7,21 @@ class MessageBoard < Sinatra::Base
   end
 
   get('/') do
+    @username = $username
+    @content = $content
     erb(:index)
+  end
+  
+  post('/message') do
+    $username = params[:username]
+    $content = params[:content]
+    redirect '/'
+  end
+
+  get('/message_only') do
+    @username = $username
+    # @content = $content
+    erb(:message_only)
   end
 
   run! if app_file == $0
