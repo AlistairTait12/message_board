@@ -17,12 +17,6 @@ class MessageBoard < Sinatra::Base
     $content = params[:content]
     redirect '/'
   end
-
-  get('/message_only') do
-    @username = $username
-    # @content = $content
-    erb(:message_only)
-  end
-
+  
   run! if app_file == $0
 end
